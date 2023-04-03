@@ -6,8 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> All Melons</title>
 </head>
-<h1>All Melons</h1>
-<body>
+
+    <h1>All Melons</h1>
     
+<body>
+    {%extends "base.html"%}
+
+    {%block body%}
+
+    <div class="melon-list">
+        {%for melon in melon_list%}
+        <div class="card text-center">
+            <img class="melon-image" src="{{ melon.image_url }}">
+            <a href="{{url_for('melon_details', melon_id=melon.melon_id)}}">
+                <h2>{{melon.common_name}}</h2>
+            </a>
+            <h3>{{melon.price_str()}}</h3>
+        </div>    
+        {%endfor%}
+    </div>
+    {%endblock%} 
 </body>
 </html>

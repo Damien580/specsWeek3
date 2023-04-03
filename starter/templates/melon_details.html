@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><Details></Details></title>
 </head>
+
 <h1>Details</h1>
+
 <body>
+    {%extends "base.html"%} 
+    
+    {%block body%} 
+
+    <div class="melon-deets">
+        <h1>{{melon.common_name}}</h1>
+        <img class="melon-image" src="{{melon.image_url}}"
+        <h3>Each: {{melon.price_str}}</h3>
+        <h4>{{melon.color}}</h4>
+        <ul class="seedless-bool">
+            {%if melon.seedless%} 
+                <li>Melon is Seedless!!!</li>
+            {%else%} 
+                <li>WARNING!!! Melon has Seeds!!!</li>
+            {%endif%}
+        </ul>
+        <a class="add-button" href="{{url_for('add_to_cart', melon_id=melon.melon_id)}}">Add To Cart!</a>
+    </div>
+
+    {%endblock%} 
     
 </body>
 </html>

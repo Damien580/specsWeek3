@@ -7,7 +7,7 @@
     <title><Details></Details></title>
 </head>
 
-<h1>Details</h1>
+
 
 <body>
     {%extends "base.html"%} 
@@ -17,7 +17,8 @@
     <div class="melon-deets">
         <h1>{{melon.common_name}}</h1>
         <img class="melon-image" src="{{melon.image_url}}"
-        <h3>Each: {{melon.price_str}}</h3>
+        <br>
+        <h3>Each: ${{"%0.2f" | format(melon.price)}} </h3>
         <h4>{{melon.color}}</h4>
         <ul class="seedless-bool">
             {%if melon.seedless%} 

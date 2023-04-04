@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
 </head>
-    <h1>Cart</h1>
+ 
 <body>
     {%extends "base.html"%} 
 
     {%block body%} 
-    <div class="cart-list">
-        <ul>
-        {%for melon_id, quantity in session["cart"].items()%} <!--loops through items in session["cart"]-->
-            <li id="melon-name">{{melon_id}}: {{quantity}}</li> <!--displays melon name and count in the cart-->
-        {%endfor%} 
-        </ul>
-    </div>
+
+    <!-- <div class="cart-list"> -->
+        <!-- <ul> -->
+        <!-- {%for melon_id, quantity in session["cart"].items()%} loops through items in session["cart"] -->
+            <!-- <li id="melon-name">{{melon_id}}: {{quantity}}</li> displays melon name and count in the cart -->
+        <!-- {%endfor%}  -->
+        <!-- </ul> -->
+    <!-- </div> -->
+    
     <table class="table table-striped mt-3"> <!--creates a table to display info-->
         <thead> <!--table headers-->
             <tr> <!--table row-->

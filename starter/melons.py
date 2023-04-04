@@ -17,7 +17,7 @@ class Melon: #this function creates melon class objects.
         return (f"<Melon: {self.melon_id}, {self.common_name}>") #this __repr__ will print the melon_id and common_name of each melon.
     
     def price_str(self): #this method will return the price as a string
-        return f"${self.price}"
+        return (f"<${self.price}>")
     
 def read_csv(file): #this function pulls the melon info from the .csv file and prints it in the console.
     with open(file) as csvfile:

@@ -54,7 +54,11 @@ def cart():
         
     return render_template("cart.html", cart_melons=cart_melons, order_total=order_total) #displays appended cart page information.
 
-
+@app.route("/empty-cart")
+def empty_cart():
+    session["cart"] = {} #this empties the cart by rewriting the session with an empty dictionary.
+    
+    return redirect("/cart") #this reloads the cart page after emptying the cart.
 
 
 if __name__ == "__main__":

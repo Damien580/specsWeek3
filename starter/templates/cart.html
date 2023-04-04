@@ -29,17 +29,19 @@
         </thead>
         <tbody>
             {% for melon in cart_melons%} <!--loops through melons in cart -->
-            <tr>
-                <th>{{melon.common_name}}</th> <!--values displayed in the rows of the table-->
+            <tr> <!--values displayed in the rows of the table-->
+                <th>{{melon.common_name}}</th> 
                 <th>{{melon.quantity}}</th>
-                <th>{{"%0.2f" | format(melon.price)}}</th> <!----->
-                <th>{{"%0.2f" | format(melon.total_cost)}}</th>
+                <th>{{"%0.2f" | format(melon.price)}}</th> <!--formats the price as a float with 2 decimal places-->
+                <th>{{"%0.2f" | format(melon.total_cost)}}</th> <!--formats the total_cost as a float with 2 decimal places-->
             </tr>
             {%endfor%}
         </tbody>
     </table>
     
-    <h3>Total: ${{ "%0.2f" | format(order_total) }}</h3>
+    <h3>Total: ${{ "%0.2f" | format(order_total) }}</h3> <!--formats the cart total as a float with 2 decimal places-->
+    <a href="/empty-cart" class="btn btn-primary">Empty Cart</a>
     {%endblock%} 
+
 </body>
 </html>

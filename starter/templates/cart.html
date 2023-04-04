@@ -9,5 +9,37 @@
     <h1>Cart</h1>
 <body>
     {%extends "base.html"%} 
+
+    {%block body%} 
+    <div class="cart-list">
+        <ul>
+        {%for melon_id, quantity in session["cart"].items()%} <!--loops through items in session["cart"]-->
+            <li id="melon-name">{{melon_id}}: {{quantity}}</li> <!--displays melon name and count in the cart-->
+        {%endfor%} 
+        </ul>
+    </div>
+    <table class="table table-striped mt-3"> <!--creates a table to display info-->
+        <thead> <!--table headers-->
+            <tr> <!--table row-->
+                <th>Melon Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for melon in cart_melons%} <!--loops through melons in cart -->
+            <tr>
+                <th>{{melon.common_name}}</th> <!--values displayed in the rows of the table-->
+                <th>{{melon.quantity}}</th>
+                <th>{{"%0.2f" | format(melon.price)}}</th> <!----->
+                <th>{{"%0.2f" | format(melon.total_cost)}}</th>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    
+    <h3>Total: ${{ "%0.2f" | format(order_total) }}</h3>
+    {%endblock%} 
 </body>
 </html>

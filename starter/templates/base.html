@@ -16,14 +16,18 @@
                     <a class="nav-link" href="/cart">Cart</a>
                 </div>
             </div>
+
         </div>
     </nav>
 
   <div class="container">
-
+    {%for message in get_flashed_messages()%} 
+        <p class="alert alert-warning">{{message}}</p>
+    {%endfor%} 
     <!-- This is where the main content goes. -->
     {% block body %}
-        BODY OF PAGE GOES HERE VIA INHERITANCE
+       <h1>Welcome to my Melons!!!</h1> 
+       
     {% endblock %}
 
   </div>

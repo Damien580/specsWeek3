@@ -4,11 +4,11 @@ from pprint import pprint
 
 class Melon: #this function creates melon class objects.
     def __init__(self, melon_id, common_name, price, image_url, color, seedless):
-        self.melon_id = str(melon_id),
-        self.common_name = common_name,
-        self.price = price,
-        self.image_url = image_url,
-        self.color = color,
+        self.melon_id = melon_id
+        self.common_name = common_name
+        self.price = price
+        self.image_url = image_url
+        self.color = color
         self.seedless = seedless
    
         
@@ -35,12 +35,11 @@ def melon_obj(file): #this func creates melon objects, and stores them in the gl
         
         for row in rows:
             melon_id = row['melon_id']
-            print(type(melon_id))
             melon = Melon(melon_id, row['common_name'], float(row['price']), row['image_url'], row['color'], eval(row['seedless']))
             print(type(melon.melon_id))
             melon_dict[melon_id] = melon
 
-    # print(melon_dict)
+    print(melon_dict)
 
 def get_by_id(melon_id): #this function returns individual melon dictionaries by id.
    return melon_dict[melon_id]
@@ -49,5 +48,4 @@ def get_melons(): #this function returns melon dictionaries in  a list.
     return list(melon_dict.values())
 
 
-
-melon_obj("melon.csv")
+melon_obj("melons.csv")

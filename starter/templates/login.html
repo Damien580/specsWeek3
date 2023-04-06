@@ -6,7 +6,9 @@
 <form method="POST" action="/login"> <!--creates the form, sets it to the  "POST" class, and the action sends it to the login endpoint-->
     <div>{{ form.username.label }}: {{ form.username }}</div> <!--creates the input and label for the user name-->
     <div>{{form.password.label }}: {{ form.password }}</div> <!--creates the input and label for the password-->
-    {{ form.csrf.token }} <!--the token assigned to the session-->
+
+    {{ form.csrf_token }} <!--the token assigned to the session-->
+
     <button class="btn btn-primary" type="submit">Log In</button>
 </form>
 {% endblock %}

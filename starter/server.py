@@ -81,7 +81,7 @@ def login():
         
         session["username"] = user["username"] #assigns token to session under username for access if logged in.
         flash("Logged In!")
-        return redirect("/all_melons") #redirects to all_melons page when logged in.
+        return redirect("/melons") #redirects to all_melons page when logged in.
         
     return render_template("login.html", form=form) #reloads page if form not submitted or data invalid
 
@@ -90,6 +90,13 @@ def logout(): #function to log out
     del session["username"] #deletes session token for the user
     flash("logged Out!")
     return redirect("/login") #redirects to login page when logged out.
+
+@app.errorhandler(404) #.errorhandler creates an endpoint for an error code.
+def error_404(e): #function that renders the html template for the error
+    return render_template("404.html")
+
+
+
 
 
 

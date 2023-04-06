@@ -14,14 +14,13 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="/melons">All Melons</a>
                     <a class="nav-link" href="/cart">Cart</a>
-                    {% if "username" in session %} <!--loops through form info, if session has the username token, link will navigate to logout page-->
+                    {% if "username" in session %}
                         <a class="nav-link" href="/logout">Log Out</a>
-                    {% else %} <!--if session does not have token, will link to login page-->
+                    {% else %}
                         <a class="nav-link" href="/login">Log In</a>
                     {% endif %}
                 </div>
             </div>
-
         </div>
     </nav>
 

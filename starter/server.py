@@ -35,9 +35,9 @@ def add_to_cart(melon_id): #function adds a melon to the cart.
     cart[melon_id] = cart.get(melon_id, 0) + 1 #this line increases the total num of melons in the cart each time one is added.
     session.modified = True #makes sure the sessions updates correctly.
     flash(f"Melon {melon_id} added to cart.") 
-    print(cart)
+   
     
-    return redirect("/cart")
+    return render_template("melon_details.html", melon = melons.get_by_id(melon_id))
 
 @app.route("/cart")
 def cart():

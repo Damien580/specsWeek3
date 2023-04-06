@@ -1,0 +1,12 @@
+{% extends "base.html" %} <!--uses the base.html to format the html outside of the block-->
+
+{% block body %} <!--excludes this area from being formatted by inheritance-->
+<h2>Please Log In</h2>
+
+<form method="POST" action="/login"> <!--creates the form, sets it to the  "POST" class, and the action sends it to the login endpoint-->
+    <div>{{ form.username.label }}: {{ form.username }}</div> <!--creates the input and label for the user name-->
+    <div>{{form.password.label }}: {{ form.password }}</div> <!--creates the input and label for the password-->
+    {{ form.csrf.token }} <!--the token assigned to the session-->
+    <button class="btn btn-primary" type="submit">Log In</button>
+</form>
+{% endblock %}

@@ -1,6 +1,8 @@
 from flask import Flask, render_template, redirect, flash, request, session
 import jinja2
 import melons
+from forms import LoginForm
+import customers
 
 
 app = Flask(__name__)
@@ -24,6 +26,9 @@ def melon_details(melon_id): #returns a page that displays a melons info, and an
 
 @app.route("/add_to_cart<melon_id>")
 def add_to_cart(melon_id): #function adds a melon to the cart.
+    if "username" not in session:
+        return redirect("/login")
+    
     if "cart" not in session: #this initiates the session if not already running.
         session["cart"] = {}
     cart = session["cart"]
@@ -59,6 +64,33 @@ def empty_cart():
     session["cart"] = {} #this empties the cart by rewriting the session with an empty dictionary.
     
     return redirect("/cart") #this reloads the cart page after emptying the cart.
+
+@app.route("/login", methods=["GET", "POST"]) #creates an endpoint for the login page
+def login():
+    form = LoginForm(request.form) #sets the form variable.
+    
+    if form.validate_on_submit():  #requests the form data from the login.
+        username = form.username.data
+        password = form.password.data
+        
+        user = customers.get_by_username(username) #checks to see if registered user exists in the customer list and if passwrod matches user info.
+        
+        if not user or user["password"] != password: #if user does not exist or password is incorrect, displays error message and redirects to login page.
+            flash("Invalid Username or Password!")
+            return redirect("/login")
+        
+        session["username"] = user["username"] #assigns token to session under username for access if logged in.
+        flash("Logged In!")
+        return redirect("/all_melons") #redirects to all_melons page when logged in.
+        
+    return render_template("login.html", form=form) #reloads page if form not submitted or data invalid
+
+@app.route("/logout") #endpoint for logout page
+def logout(): #function to log out
+    del session["username"] #deletes session token for the user
+    flash("logged Out!")
+    return redirect("/login") #redirects to login page when logged out.
+
 
 
 if __name__ == "__main__":

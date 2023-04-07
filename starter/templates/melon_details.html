@@ -23,9 +23,9 @@
         <h4>{{melon.color}}</h4>
         <ul class="seedless-bool">
             {%if melon.seedless%} 
-                <li><h3>Melon is Seedless!!!</h3></li>
-            {%else%} 
                 <li><h2>WARNING!!! Melon has Seeds!!!</h2></li>
+            {%else%} 
+                <li><h3>Melon is Seedless!!!</h3></li>
             {%endif%}
         </ul>
             <a type="button" class="btn btn-success text-light"  href="{{url_for('add_to_cart', melon_id=melon.melon_id)}}">Add To Cart!</a>

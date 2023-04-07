@@ -21,7 +21,7 @@
             <a href="{{url_for('melon_details', melon_id=melon.melon_id)}}">
                 <button type="button" class="btn btn-outline-secondary"><h2 class="text-dark">{{melon.common_name}}</h2></button>
             </a>
-            <h3>{{"%0.2f" | format(melon.price)}}</h3>
+            <h3>${{"%0.2f" | format(melon.price)}}</h3>
         </div>    
         {%endfor%}
     </div>

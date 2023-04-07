@@ -7,26 +7,18 @@
     <title>Cart</title>
 </head>
  
-<body>
+<body id="bg2">
     {%extends "base.html"%} 
 
     {%block body%} 
-
-    <!-- <div class="cart-list"> -->
-        <!-- <ul> -->
-        <!-- {%for melon_id, quantity in session["cart"].items()%} loops through items in session["cart"] -->
-            <!-- <li id="melon-name">{{melon_id}}: {{quantity}}</li> displays melon name and count in the cart -->
-        <!-- {%endfor%}  -->
-        <!-- </ul> -->
-    <!-- </div> -->
     
-    <table class="table table-striped mt-3"> <!--creates a table to display info-->
+    <table class="table table-secondary table-striped mt-3"> <!--creates a table to display info-->
         <thead> <!--table headers-->
             <tr> <!--table row-->
-                <th>Melon Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
+                <th class="text-dark">Melon Name</th>
+                <th class="text-dark">Quantity</th>
+                <th class="text-dark">Price</th>
+                <th class="text-dark">Total</th>
             </tr>
         </thead>
         <tbody>

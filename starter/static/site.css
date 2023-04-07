@@ -1,9 +1,67 @@
 .melon-image {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
  }
- 
- #melon-list {
-    display: flex;
-    flex-wrap: wrap;
+
+ #bg1{
+   background-image: url("https://st4.depositphotos.com/20363444/41485/i/450/depositphotos_414853936-stock-photo-sexy-brunette-woman-sunglasses-covered.jpg");
+   position: relative; 
+   top: 0; 
+   left: 0; 
+   min-width: 100%;
+   min-height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
  }
+
+ #title{
+   color: rgb(255, 144, 181);
+ }
+
+ #card{
+   background-image:url("https://st3.depositphotos.com/13349494/32631/i/450/depositphotos_326319906-stock-photo-top-view-beige-wooden-empty.jpg") ;
+   background-size: cover; 
+}
+
+#bg2{
+
+   background-image: url("https://st2.depositphotos.com/1038793/12178/i/450/depositphotos_121787738-stock-photo-fresh-orange-melon.jpg");
+   /* position: fixed;  */
+   /* top: 0; 
+   left: 0; 
+   min-width: 100%;
+   min-height: 100%; */
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#bg5{
+   background-image: url("https://st4.depositphotos.com/16122460/30946/i/450/depositphotos_309464736-stock-photo-flat-lay-composition-with-tasty.jpg");
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+   min-width: 100%;
+   min-height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#bg3{
+   background-image: url("https://st.depositphotos.com/1129679/3942/i/450/depositphotos_39423441-stock-photo-vineyards-in-languedoc-roussillon.jpg");
+background-size: 75vw;
+}
+
+#bg4{
+   background-image: url("https://st2.depositphotos.com/1001485/5365/i/450/depositphotos_53656065-stock-photo-girl-with-watermelon.jpg");
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+   min-width: 100%;
+   min-height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* #bg5{
+
+} */

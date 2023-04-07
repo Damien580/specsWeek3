@@ -36,10 +36,7 @@ def melon_obj(file): #this func creates melon objects, and stores them in the gl
         for row in rows: #this loop creates a melon dictionary for each melon fromm each row in melons.csv, to be stored in the variable.
             melon_id = row['melon_id']
             melon = Melon(melon_id, row['common_name'], float(row['price']), row['image_url'], row['color'], eval(row['seedless']))
-            print(type(melon.melon_id))
             melon_dict[melon_id] = melon
-
-    print(melon_dict)
 
 def get_by_id(melon_id): #this function returns individual melon dictionaries by id from the melons list.
    return melon_dict[melon_id]

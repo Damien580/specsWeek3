@@ -9,17 +9,17 @@
 
   
     
-<body>
+<body id="bg3">
     {%extends "base.html"%}
 
     {%block body%}
 
     <div class="melon-list">
         {%for melon in melon_list%}
-        <div class="card text-center">
+        <div class="card text-center text-dark" id="card">
             <img class="melon-image" src="{{ melon.image_url }}">
             <a href="{{url_for('melon_details', melon_id=melon.melon_id)}}">
-                <h2>{{melon.common_name}}</h2>
+                <h2 class="text-dark">{{melon.common_name}}</h2>
             </a>
             <h3>{{melon.price_str()}}</h3>
         </div>    
